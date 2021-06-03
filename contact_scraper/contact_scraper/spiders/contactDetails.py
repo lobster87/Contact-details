@@ -9,7 +9,7 @@ from scrapy.linkextractors.lxmlhtml import LxmlLinkExtractor
 from googlesearch import search
 logging.getLogger('scrapy').propagate = False
 import sys
-sys.path.append('contactDetails/Database')
+sys.path.append('contact_scraper/Database')
 from database import *
 
 
@@ -100,7 +100,7 @@ def get_info(path, reject=[]):
     print('Collecting Google urls...')
 
     
-    urls = pd.read_csv('contactDetails/urls.csv')
+    urls = pd.read_csv('contact_scraper/urls.csv')
     google_urls = []
     [google_urls.append(url) for url in urls.iloc[:,0]]
 
